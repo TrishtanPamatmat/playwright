@@ -1,0 +1,19 @@
+{
+  "name": "qa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:show": "npx playwright test --headed",
+    "docker": "docker run -it --rm --ipc=host -v \"%cd%:/app\" -w /app mcr.microsoft.com/playwright:v1.59.1-noble npx playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0",
+    "dotenv": "^17.4.2"
+  }
+}

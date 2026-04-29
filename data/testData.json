@@ -1,0 +1,12 @@
+{
+    "invalidUser": {
+      "username": "wrong_user",
+      "password": "wrong_password",
+      "expectedError": "Your username is invalid!"
+    },
+    "emptyFields": {
+      "username": "",
+      "password": "",
+      "expectedError": "Your username is invalid!"
+    }
+  }
