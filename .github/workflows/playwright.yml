@@ -23,8 +23,7 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test
       env:
-        # Pass your .env variables to the CI environment
-        BASE_URL: ${{ secrets.BASE_URL }}
+        BASE_URL: ${{ secrets.BASE_URL }}  # This maps the GitHub Secret to process.env.BASE_URL
         QA_USER: ${{ secrets.QA_USER }}
         QA_PASS: ${{ secrets.QA_PASS }}
 
@@ -34,3 +33,5 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+
+        

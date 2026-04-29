@@ -1,6 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
-dotenv.config();
+import path from 'path';
+
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -27,10 +29,8 @@ export default defineConfig({
     navigationTimeout: 15000,
 
     /* Environment and Reporting */
-    baseURL: process.env.BASE_URL,
-    trace: 'retain-on-failure',
-    
-    /* Good for QA: take a screenshot if a test fails */
+    baseURL: process.env.BASE_URL || 'https://the-internet.herokuapp.com',
+    trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
 
